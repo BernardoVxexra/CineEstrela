@@ -1,0 +1,131 @@
+ /* Reset básico */
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1a1a3c;
+  color: #fff;
+  height: 1080px;
+  margin-top:120px;
+}
+
+.tudo {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Alterado para empilhar os elementos na vertical */
+  margin-top: 70px;
+  height: 90%;
+}
+
+
+.Catalogo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+
+
+.row {
+  display: flex;
+  justify-content: center; /* Centraliza os cards */
+  flex-wrap: wrap; /* Permite quebra de linha se necessário */
+  gap: 20px; /* Espaço entre os cards */
+  width: 100%;
+  margin-top: 30px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column; /* Organiza o conteúdo na vertical */
+  justify-content: space-between; /* Espaça o conteúdo de forma uniforme */
+  flex: 1 1 calc(20% - 40px); /* Largura proporcional */
+  max-width: 15%;
+  min-width: 240px;
+  margin: 10px;
+  border-radius: 10px;
+  padding: 15px;
+  overflow: hidden;
+  background-color: #282850;
+  transition: transform 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.titu2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  flex-grow: 1; /* Faz o título crescer para ocupar espaço restante */
+}
+
+.classificacao, .genero, .duracao {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.informacoes-filme {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.informacoes-filme .classificacao,
+.informacoes-filme .genero {
+  font-size: 14px;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.classificacao {
+  background-color: #202020;
+}
+
+.card .acoes {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card:hover .acoes {
+  display: flex;
+}
+
+.acoes button {
+  padding: 10px 15px;
+  background-color: #6a6bbb;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.acoes button:hover {
+  background-color: #9380ff;
+}
+
+@media (max-width: 830px) {
+  .card {
+    width: 60%;
+    min-width: 60%;
+    margin-bottom: 40px;
+  }
+}
+

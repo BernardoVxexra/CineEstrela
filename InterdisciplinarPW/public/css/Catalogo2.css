@@ -1,0 +1,244 @@
+ /* Reset básico */
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1a1a3c;
+  color: #fff;
+  height: 1080px;
+  margin-top:120px;
+}
+
+.tudo {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Alterado para empilhar os elementos na vertical */
+  margin-top: 70px;
+  height: 90%;
+}
+
+.titu {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  flex: auto;
+  justify-content: flex-start; /* Ajustado para alinhar o título à esquerda */
+  padding-left: 40px;
+}
+
+.titu h1 {
+  color: white;
+  font-style: bold;
+  height: 5%;
+  width: 100%;
+  margin-top: 30px;
+}
+.search-bar {
+  display: flex;
+  align-items: center; /* Alinha verticalmente */
+  width: 500px; /* Garante largura suficiente */
+  margin-right: 60px;
+}
+
+.search-input {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 1px solid #6a6bbb;
+  border-radius: 20px 0 0 20px; /* Arredonda apenas os cantos esquerdos */
+  background-color: #282850;
+  color: white;
+  outline: none;
+  flex-grow: 1; /* Faz o campo de entrada crescer e ocupar o máximo de largura disponível */
+  box-sizing: border-box; /* Garante que o padding não ultrapasse a largura */
+}
+form {
+  display: flex; /* Usando flex para alinhar os elementos em linha */
+  width: 100%; /* O formulário ocupa toda a largura disponível */
+}
+
+
+.search-input::placeholder {
+  color: #ccc;
+}
+
+.search-input:focus {
+  border-color: #9380ff;
+}
+
+.search-button {
+  border-radius: 0 20px 20px 0; /* Arredonda apenas os cantos direitos */
+  width: 48px; /* Alinha com a altura do input */
+  height: 41px; /* Define a mesma altura do input */
+  font-size: 18px;
+  background-color: #6a6bbb;
+  border: 1px solid #6a6bbb; /* Alinha com a borda do input */
+  border-left: none; /* Remove a borda entre o botão e o input */
+  display: flex;
+  align-items: center; /* Centraliza o ícone verticalmente */
+  justify-content: center; /* Centraliza o ícone horizontalmente */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #9380ff;
+}
+
+
+.Catalogo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+
+
+.row {
+  display: flex;
+  justify-content: center; /* Centraliza os cards */
+  flex-wrap: wrap; /* Permite quebra de linha se necessário */
+  gap: 20px; /* Espaço entre os cards */
+  width: 100%;
+  margin-top: 30px;
+}
+
+.card {
+  flex: 1 1 calc(20% - 40px); /* Define uma largura proporcional, considerando margem */
+  max-width: 15%; /* Largura máxima */
+  min-width: 240px; /* Evita que os cards fiquem muito pequenos */
+  margin: 10px; /* Espaçamento entre os cards */
+  border-radius: 10px;
+  padding: 15px;
+  overflow: hidden; /* Para garantir que nada ultrapasse os limites do card */
+  transition: transform 0.3s ease; /* Adiciona uma transição suave ao hover */
+  background-color: #282850;
+}
+
+
+
+.card:hover {
+  transform: scale(1.05); /* Aumenta levemente o card ao passar o mouse */
+}
+
+/* Estilização dos botões */
+.card .acoes {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none; /* Inicialmente escondido */
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card:hover .acoes {
+  display: flex; /* Mostra os botões ao passar o mouse */
+}
+
+.acoes button {
+  padding: 10px 15px;
+  background-color: #6a6bbb; /* Cor de fundo do botão */
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Transição suave para hover */
+}
+
+.acoes button:hover {
+  background-color: #9380ff; /* Cor do botão ao passar o mouse */
+}
+
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px; /* Espaçamento abaixo da imagem */
+}
+
+.titu2 {
+  font-size: 18px; /* Texto do título maior */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.classificacao, .genero, .duracao {
+  font-size: 16px; /* Texto das informações maior */
+  margin-bottom: 5px;
+}
+.informacoes-filme {
+  display: flex;
+  justify-content: space-between; /* Espaça uniformemente */
+  align-items: center; /* Alinha verticalmente */
+  gap: 10px; /* Espaço entre os elementos */
+}
+
+.informacoes-filme .classificacao,
+.informacoes-filme .genero {
+  font-size: 14px; /* Ajuste o tamanho da fonte conforme necessário */
+  padding: 5px;
+  border-radius: 4px; /* Borda arredondada para aparência uniforme */
+}
+.classificacao{
+  background-color: #202020; /* Exemplo: fundo para destaque */
+}
+
+/* .modal {
+  display: none; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #282850;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  width: 300px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.confirm-button {
+  padding: 10px 20px;
+  background-color: #6a6bbb;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.confirm-button:hover {
+  background-color: #9380ff;
+}
+*/
+@media (max-width: 830px) {
+  .row {
+    flex-direction: column; /* Empilha os cards verticalmente */
+    align-items: center;   /* Centraliza os cards */
+}
+
+.card {
+    width: 60%; /* Cada card ocupa 90% da largura da tela */
+    min-width: 60%;
+    margin-bottom: 40px; /* Espaço entre os cards */
+}
+}

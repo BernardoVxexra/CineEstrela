@@ -1,0 +1,112 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*::-webkit-scrollbar {
+    width: 10px;
+}
+*::-webkit-scrollbar-thumb {
+    background: #89938F;
+    border-radius: 20px;
+}
+/* Contêiner da logo e do menu hamburguer */
+.logo {
+    width: 100%;
+    height: 80px;
+    background-color: #01061A;
+    display: flex;
+    justify-content: space-between;
+    position:fixed;
+    align-items: center;
+    padding: 0 20px;
+    top:0;
+    left:0;
+    z-index: 1000; /* Garante que ele fique sobre outros elementos */
+}
+
+.logo img {
+    width: 80px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+/* Ícone do Menu Hamburguer */
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 40px;
+    height: 35px;
+    cursor: pointer;
+    z-index: 10;
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.hamburger-menu span {
+    display: block;
+    height: 3px;
+    background-color: white;
+    border-radius: 5px;
+    transition: 0.3s;
+    margin-left: -1px;
+    margin-right: 1px;
+}
+
+/* Transformação para o "X" */
+.hamburger-menu.open span:nth-child(1) {
+    transform: rotate(45deg) translate(6px,10px);
+    background-color: white;
+}
+
+.hamburger-menu.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -10px);
+    background-color: white;
+}
+
+/* Sidebar (Menu Lateral) */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 90px;
+    height: 50%;
+    background-color: #01061A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: right 0.3s ease;
+    margin-top: 70px;
+    border-radius:15px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a img {
+    width: 40px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.sidebar ul li a img:hover {
+    transform: scale(1.1);
+}
+
+/* Classe para mostrar o menu */
+.sidebar.open {
+    right: 0;
+    z-index:100;
+}
